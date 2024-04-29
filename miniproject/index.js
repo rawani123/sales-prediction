@@ -25,7 +25,7 @@ app.use(cors());
 app.get('/api/items', (req, res) => {
   Item.find({})
     .then(items => {
-      console.log(items)
+      // console.log(items)
       res.status(200).json({ success: true, data: items }); // Send retrieved items as JSON response
     })
     .catch(err => {

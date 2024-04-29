@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Mlmodel() {
   const [formData, setFormData] = useState({
@@ -43,8 +44,9 @@ function Mlmodel() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-200">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <div className="min-h-screen flex flex-col gap-5 items-center justify-center bg-blue-200">
+      <Link to="/" className='bg-blue-600 px-6 py-4 mt-10 mb-5 rounded-lg text-white '>Graphs</Link>
+      <div className="bg-white p-8 rounded-2xl shadow-2xl shadow-blue-600 w-full max-w-md">
         <h1 className="text-2xl mb-6">Make Prediction</h1>
         {error && <div className="text-red-500 mb-4">{error}</div>}
         <form onSubmit={handleSubmit} className="flex flex-wrap">
@@ -210,9 +212,9 @@ function Mlmodel() {
           </button>
         </form>
         {prediction !== null && (
-          <div>
-            <h2 className="text-xl mt-4">Prediction:</h2>
-            <p>{prediction}</p>
+          <div className='flex flex-row gap-3 justify-center items-center mt-5'>
+            <h2 className="text-xl ">Prediction:</h2>
+            <p className='text-xl underline '>{prediction}</p>
           </div>
         )}
       </div>

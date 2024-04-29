@@ -6,7 +6,7 @@ import Mlmodel from './components/Mlmodel'
 
 const App = () => {
   return (
-    <div className='bg-blue-200'>
+    <div className='bg-blue-200 w-screen'>
     
     <Routes>
       <Route path="/" element={<Chart/>}/>
